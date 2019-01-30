@@ -22,6 +22,9 @@ body{
     text-align: center;
     font-size: 48px;
 }
+.title img{
+    width: 50px;
+}
 
 #homepage h1{
     text-align: center;

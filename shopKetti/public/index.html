@@ -8,10 +8,52 @@
     <title>API-Yaltha</title>
 </head>
 <body>
-    <h1 class="title"><img src="../img/logo.png"/>ShopKetti</h1>
+    <h1 class="title"><img src="../img/logo-sk.png"/>ShopKetti</h1>
     <div id="homepage">
-        <h1>Your best choice!</h1>
+        <h1>Your best shop!</h1>
         <div class="products"></div>
+
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://unpkg.com/react@15/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+
+        <script type="text/babel">
+        var Product = React.createClass({
+            getInitialState: function(){
+                return({
+                    product:[]
+                });
+            },
+            render: function(){
+                var product = this.state.product;
+                product = product.map(function(produt, index){
+                    return(
+                        <li key={index}>
+                            <span className="image">{product.obj.img_url}</span>
+                            <span className="name">{product.obj.name}</span>
+                            <span className="category">{product.obj.category}</span>
+                            <span className="sku">{product.obj.sku}</span>
+                            <span className="description">{product.obj.description}</span>
+                            <span className="price">{product.obj.price}</span>  
+                            <span className="created_date">{product.obj.Created_date}</span>
+                            <span className="seller_name">{product.obj.seller_name}</span>  
+                        </li>
+                    );
+                });
+                return(
+                    <div id="product-container">
+                        <form id="search" onSubmit={this.handleSubmit}>
+                            <label>Enter product ID : </label>
+                            <input type="text" ref="product-ID" placeholder="product ID" />
+                            <input type="submit" value="Find Product" />
+                        </form>
+                        <ul>{product}</ul>
+                    </div>
+                )
+            }
+        })
+        
+        </script>
     </div>
 </body>
 </html>
