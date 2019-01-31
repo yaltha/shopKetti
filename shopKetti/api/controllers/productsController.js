@@ -2,7 +2,7 @@ const mongoose = require("mongoose"),
   Product = mongoose.model("Products");
 
 exports.index = function(req, res) {
-  res.send("Welcome to the test API");
+   res.send("Welcome to the test API");
 };
 
 exports.listAllProducts = function(req, res) {

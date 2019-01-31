@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" rel="stylesheet">
     <title>API-Yaltha</title>
 </head>
 <body>
-    <h1 class="title"><img src="../img/logo-sk.png"/>ShopKetti</h1>
+    <h1 class="title">Shop<img src="../img/logo-sk.png"/>Ketti</h1>
+    <h2>Your best shop!</h2>
     <div id="homepage">
-        <h1>Your best shop!</h1>
-        <div class="products"></div>
+        <button class="button" id="btn-all">Show All Products</button>
+        <button class="button" id="btn-create">Create Product</button>
+        <button class="button" id="btn-edit">Edit Product</button>
+        <button class="button" id="btn-del">Delete Product</button>
+        <div id="products"></div>
 
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
         <script src="https://unpkg.com/react@15/dist/react.js"></script>
@@ -26,7 +30,7 @@
             },
             render: function(){
                 var product = this.state.product;
-                product = product.map(function(produt, index){
+                product = product.map(function(product, index){
                     return(
                         <li key={index}>
                             <span className="image">{product.obj.img_url}</span>
@@ -49,9 +53,10 @@
                         </form>
                         <ul>{product}</ul>
                     </div>
-                )
-            }
-        })
+                );
+            },
+        });
+        ResctDOM.render(<Product/>, document.getElementById('product'));
         
         </script>
     </div>

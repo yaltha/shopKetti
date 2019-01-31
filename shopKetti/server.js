@@ -5,6 +5,7 @@ const express = require("express"),
   Product = require("./api/models/productModel"), // Load in product model
   bodyParser = require("body-parser");
 
+  
 // mongoose instance connection url
 mongoose.Promise = global.Promise;
 mongoose.connect(
